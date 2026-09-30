@@ -1,10 +1,31 @@
-// Lista de estados brasileiros
-const estados = [
-    "AC", "AL", "AP", "AM", "BA", "CE", "DF",
-    "ES", "GO", "MA", "MT", "MS", "MG", "PA",
-    "PB", "PR", "PE", "PI", "RJ", "RN", "RS",
-    "RO", "RR", "SC", "SP", "SE", "TO"
-];
+// API lista de estados brasileiros
+async function carregarEstados(selectEstado) {
+    try {
+        const resposta = await fetch(
+            "https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome"
+        );
+
+        if (!resposta.ok) {
+            throw new Error("Erro ao carregar os estados.");
+        }
+
+        const estados = await resposta.json();
+
+        estados.forEach(estado => {
+            const opcao = document.createElement("option");
+
+            opcao.value = estado.sigla;
+            opcao.textContent = estado.nome;
+
+            selectEstado.appendChild(opcao);
+        });
+
+    } catch (erro) {
+        console.error("Não foi possível carregar os estados:", erro);
+    }
+}
+
+
 
 // Chave utilizada para armazenar o rascunho do formulário no navegador.
 const CHAVE_RASCUNHO = "patasTransformam_rascunhoCadastro";
@@ -46,17 +67,13 @@ function restaurarRascunho(formulario) {
     }
 }
 
-// Inicializa os recursos da página que estiver carregada no elemento main.
-function inicializarPagina() {
+ // Inicializa os recursos da página que estiver carregada no elemento main.
+async function inicializarPagina() {
     const campoEstado = document.getElementById("estado");
 
+    // Carrega os estados pela API do IBGE, caso o select ainda não esteja preenchido.
     if (campoEstado && campoEstado.options.length <= 1) {
-        estados.forEach(estado => {
-            const opcao = document.createElement("option");
-            opcao.value = estado;
-            opcao.textContent = estado;
-            campoEstado.appendChild(opcao);
-        });
+        await carregarEstados(campoEstado);
     }
 
     // Máscara de CPF
@@ -119,7 +136,7 @@ function inicializarPagina() {
     const mensagemSucesso = document.getElementById("mensagemSucesso");
 
     if (formulario) {
-    // Restaura o rascunho depois que as opções do select foram criadas.
+        // Restaura o rascunho depois que as opções do select foram criadas.
         restaurarRascunho(formulario);
         atualizarDisponibilidade();
 
