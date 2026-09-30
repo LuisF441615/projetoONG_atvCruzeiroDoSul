@@ -1,18 +1,19 @@
-/* Banner principal organizado em Grid de 12 colunas */
+
+/* Banner principal */
 .banner {
-    background: #F1E9D9;
+    background-color: #F1E9D9;
     padding: 60px 0;
 }
 
 .banner .container {
-    display: grid;
-    grid-template-columns: repeat(12, minmax(0, 1fr));
+    display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 40px;
 }
 
-.banner-conteudo, .banner-imagem {
-    grid-column: span 6;
+.banner-conteudo {
+    flex: 1;
 }
 
 .banner-conteudo h1 {
@@ -25,6 +26,11 @@
     font-size: 1.1rem;
     margin-bottom: 30px;
 }
+
+.banner-imagem {
+    flex: 1;
+}
+
 .banner-imagem img {
     width: 100%;
     height: 350px;
@@ -33,74 +39,34 @@
     display: block;
 }
 
-/* Breakpoint 1 — telas panorâmicas */
-@media (max-width: 1440px) {
-    .banner .container {
-        gap: 32px;
-    }
-}
+/* Responsividade do banner */
+@media (max-width: 768px) {
 
-/* Breakpoint 2 — notebooks */
-@media (max-width: 1200px) {
-    .banner-conteudo h1 {
-        font-size: 2.5rem;
-    }
-    .banner-imagem img {
-        height: 320px;
-    }
-}
-
-/* Breakpoint 3 — tablets em paisagem */
-@media (max-width: 992px) {
     .banner .container {
-        gap: 24px;
+        flex-direction: column;
+        text-align: center;
     }
+
     .banner-conteudo h1 {
         font-size: 2.2rem;
     }
-    .banner-imagem img {
-        height: 300px;
-    }
-}
 
-/* Breakpoint 4 — tablets: conteúdo passa a ocupar toda a largura */
-@media (max-width: 768px) {
-    .banner .container {
-        text-align: center;
-    }
-    .banner-conteudo, .banner-imagem {
-        grid-column: 1 / -1;
-    }
-    .banner-conteudo h1 {
-        font-size: 2.1rem;
-    }
     .banner-imagem img {
         height: 280px;
     }
 }
 
-/* Breakpoint 5 — celulares */
-@media (max-width: 576px) {
+@media (max-width: 480px) {
+
     .banner {
         padding: 40px 0;
     }
+
     .banner-conteudo h1 {
         font-size: 1.8rem;
     }
-    .banner-imagem img {
-        height: 240px;
-    }
-}
 
-/* Breakpoint 6 — celulares estreitos */
-@media (max-width: 400px) {
-    .banner-conteudo h1 {
-        font-size: 1.6rem;
-    }
-    .banner-conteudo p {
-        font-size: 1rem;
-    }
     .banner-imagem img {
-        height: 210px;
+        height: 220px;
     }
 }
