@@ -1,0 +1,139 @@
+
+/* Página de cadastro */
+.formulario {
+    padding: 40px 0 60px;
+}
+
+.formulario form {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    padding: 35px;
+    border-radius: 10px;
+    border: 1px solid #E5E5DD;
+}
+
+/* Grupos de campos */
+.formulario fieldset {
+    border: 1px solid #D8DED7;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+.formulario legend {
+    color: #39815B;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+/* Campos individuais */
+.campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.campo label {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #C8CEC8;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+    background-color: #FFFFFF;
+    color: #343A35;
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+    outline: 2px solid #39815B;
+    border-color: #39815B;
+}
+
+.campo textarea {
+    resize: vertical;
+}
+
+/* Campo de consentimento */
+.consentimento {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.consentimento input {
+    width: auto;
+    margin-top: 5px;
+    accent-color: #39815B;
+}
+
+.consentimento label {
+    font-weight: normal;
+}
+
+/* Aviso de campos obrigatórios */
+.aviso {
+    font-size: 0.9rem;
+    color: #666666;
+    margin-bottom: 20px;
+}
+
+/* Botão de envio */
+.formulario button {
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* Mensagem de confirmação */
+#mensagemSucesso {
+    color: #2F6849;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Campo oculto */
+.campo[hidden] {
+    display: none;
+}
+
+/* Adaptação para telas menores */
+@media (max-width: 768px) {
+
+    .formulario form {
+        padding: 25px;
+    }
+
+    .formulario fieldset {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .formulario {
+        padding: 25px 0 40px;
+    }
+
+    .formulario form {
+        padding: 15px;
+    }
+
+    .formulario fieldset {
+        padding: 15px;
+    }
+
+    .formulario legend {
+        font-size: 1.1rem;
+    }
+}
