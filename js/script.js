@@ -6,6 +6,46 @@ const estados = [
     "RO", "RR", "SC", "SP", "SE", "TO"
 ];
 
+// Chave utilizada para armazenar o rascunho do formulário no navegador.
+const CHAVE_RASCUNHO = "patasTransformam_rascunhoCadastro";
+
+// Salva os campos permitidos como um objeto JSON no localStorage.
+function salvarRascunho(formulario) {
+    const dados = {};
+
+    new FormData(formulario).forEach((valor, nome) => {
+        // CPF e consentimento não são persistidos no navegador.
+        if (nome !== "cpf" && nome !== "consentimento") {
+            dados[nome] = valor;
+        }
+    });
+
+    localStorage.setItem(CHAVE_RASCUNHO, JSON.stringify(dados));
+}
+
+// Recupera o rascunho e preenche os campos correspondentes.
+function restaurarRascunho(formulario) {
+    const rascunho = localStorage.getItem(CHAVE_RASCUNHO);
+
+    if (!rascunho) return;
+
+    try {
+        const dados = JSON.parse(rascunho);
+
+        Object.entries(dados).forEach(([nome, valor]) => {
+            const campo = formulario.elements.namedItem(nome);
+
+            if (campo && campo.type !== "checkbox") {
+                campo.value = valor;
+            }
+        });
+
+    } catch (erro) {
+        console.error("Não foi possível recuperar o rascunho:", erro);
+        localStorage.removeItem(CHAVE_RASCUNHO);
+    }
+}
+
 // Inicializa os recursos da página que estiver carregada no elemento main.
 function inicializarPagina() {
     const campoEstado = document.getElementById("estado");
@@ -79,13 +119,27 @@ function inicializarPagina() {
     const mensagemSucesso = document.getElementById("mensagemSucesso");
 
     if (formulario) {
+    // Restaura o rascunho depois que as opções do select foram criadas.
+        restaurarRascunho(formulario);
+        atualizarDisponibilidade();
+
+        // Mantém o rascunho atualizado enquanto o usuário preenche o formulário.
+        formulario.addEventListener("input", () => salvarRascunho(formulario));
+        formulario.addEventListener("change", () => salvarRascunho(formulario));
+
         formulario.addEventListener("submit", evento => {
             evento.preventDefault();
+
             if (mensagemSucesso) {
                 mensagemSucesso.textContent =
                     "Cadastro realizado com sucesso! Agradecemos seu interesse em participar.";
             }
+
             formulario.reset();
+
+            // Remove os dados salvos após o envio.
+            localStorage.removeItem(CHAVE_RASCUNHO);
+
             atualizarDisponibilidade();
         });
     }
