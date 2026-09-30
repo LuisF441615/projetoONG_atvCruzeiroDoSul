@@ -1,19 +1,18 @@
-
 /* Página de cadastro */
 .formulario {
     padding: 40px 0 60px;
 }
 
 .formulario form {
+    width: 100%;
     max-width: 800px;
     margin: 0 auto;
-    background-color: #FFFFFF;
+    background: #FFFFFF;
     padding: 35px;
     border-radius: 10px;
     border: 1px solid #E5E5DD;
 }
 
-/* Grupos de campos */
 .formulario fieldset {
     border: 1px solid #D8DED7;
     border-radius: 8px;
@@ -28,7 +27,6 @@
     padding: 0 10px;
 }
 
-/* Campos individuais */
 .campo {
     display: flex;
     flex-direction: column;
@@ -40,22 +38,18 @@
     margin-bottom: 8px;
 }
 
-.campo input,
-.campo select,
-.campo textarea {
+.campo input, .campo select, .campo textarea {
     width: 100%;
     padding: 12px;
     border: 1px solid #C8CEC8;
     border-radius: 6px;
     font-family: inherit;
     font-size: 1rem;
-    background-color: #FFFFFF;
+    background: white;
     color: #343A35;
 }
 
-.campo input:focus,
-.campo select:focus,
-.campo textarea:focus {
+.campo input:focus, .campo select:focus, .campo textarea:focus {
     outline: 2px solid #39815B;
     border-color: #39815B;
 }
@@ -64,7 +58,6 @@
     resize: vertical;
 }
 
-/* Campo de consentimento */
 .consentimento {
     flex-direction: row;
     align-items: flex-start;
@@ -81,59 +74,84 @@
     font-weight: normal;
 }
 
-/* Aviso de campos obrigatórios */
 .aviso {
-    font-size: 0.9rem;
+    font-size: .9rem;
     color: #666666;
     margin-bottom: 20px;
 }
 
-/* Botão de envio */
 .formulario button {
     border: none;
     cursor: pointer;
     font-size: 1rem;
 }
 
-/* Mensagem de confirmação */
 #mensagemSucesso {
     color: #2F6849;
     font-weight: bold;
     margin-top: 20px;
 }
 
-/* Campo oculto */
 .campo[hidden] {
     display: none;
 }
 
-/* Adaptação para telas menores */
-@media (max-width: 768px) {
+/* Breakpoint 1 — telas panorâmicas */
+@media (max-width: 1440px) {
+    .formulario form {
+        max-width: 800px;
+    }
+}
 
+/* Breakpoint 2 — notebooks */
+@media (max-width: 1200px) {
+    .formulario form {
+        max-width: 760px;
+    }
+}
+
+/* Breakpoint 3 — tablets em paisagem */
+@media (max-width: 992px) {
+    .formulario form {
+        max-width: 720px;
+    }
+}
+
+/* Breakpoint 4 — tablets */
+@media (max-width: 768px) {
     .formulario form {
         padding: 25px;
     }
-
     .formulario fieldset {
         padding: 20px;
     }
 }
 
-@media (max-width: 480px) {
-
+/* Breakpoint 5 — celulares */
+@media (max-width: 576px) {
     .formulario {
         padding: 25px 0 40px;
     }
-
     .formulario form {
-        padding: 15px;
+        padding: 18px;
     }
-
     .formulario fieldset {
-        padding: 15px;
+        padding: 16px;
     }
-
     .formulario legend {
         font-size: 1.1rem;
+    }
+}
+
+/* Breakpoint 6 — celulares estreitos */
+@media (max-width: 400px) {
+    .formulario form {
+        padding: 12px;
+    }
+    .formulario fieldset {
+        padding: 12px;
+    }
+    .campo input, .campo select, .campo textarea {
+        padding: 10px;
     }
 }
