@@ -100,6 +100,29 @@ nav a.ativo {
     background-color: #2F6849;
 }
 
+/* Botão de alternância de tema */
+.botao-tema {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.botao-tema:hover {
+    background-color: white;
+    color: #39815B;
+}
+
+.botao-tema:focus-visible {
+    outline: 3px solid #F5D6A0;
+    outline-offset: 3px;
+}
+
 /* Seção sobre */
 .sobre {
     padding: 60px 0;
@@ -179,6 +202,71 @@ footer {
 footer p {
     margin-bottom: 5px;
     font-size: 0.9rem;
+}
+
+/* Tema escuro */
+html[data-tema="escuro"] body {
+    background-color: #181C19;
+    color: #E5E9E5;
+}
+
+html[data-tema="escuro"] h2,
+html[data-tema="escuro"] .sobre h1 {
+    color: #8FCBA5;
+}
+
+html[data-tema="escuro"] header {
+    background-color: #203D2D;
+}
+
+html[data-tema="escuro"] nav a:hover,
+html[data-tema="escuro"] nav a.ativo {
+    color: #F5D6A0;
+}
+
+html[data-tema="escuro"] .atuacao {
+    background-color: #222823;
+}
+
+html[data-tema="escuro"] .card {
+    background-color: #2B332D;
+    border-color: #465349;
+}
+
+html[data-tema="escuro"] .card h3 {
+    color: #8FCBA5;
+}
+
+html[data-tema="escuro"] .banner,
+html[data-tema="escuro"] .convite {
+    background-color: #302E27;
+}
+
+html[data-tema="escuro"] .banner-conteudo h1 {
+    color: #8FCBA5;
+}
+
+html[data-tema="escuro"] footer {
+    background-color: #203D2D;
+}
+
+html[data-tema="escuro"] .botao {
+    background-color: #39815B;
+    color: white;
+}
+
+html[data-tema="escuro"] .botao:hover {
+    background-color: #4D9B6D;
+}
+
+html[data-tema="escuro"] .botao-tema {
+    color: white;
+    border-color: #D1E8D8;
+}
+
+html[data-tema="escuro"] .botao-tema:hover {
+    background-color: #D1E8D8;
+    color: #203D2D;
 }
 
 /* Responsividade geral */

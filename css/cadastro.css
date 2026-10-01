@@ -107,6 +107,43 @@
     display: none;
 }
 
+/* Formulário no tema escuro */
+html[data-tema="escuro"] .formulario form {
+    background-color: #222823;
+    border-color: #465349;
+}
+
+html[data-tema="escuro"] .formulario fieldset {
+    border-color: #526457;
+}
+
+html[data-tema="escuro"] .formulario legend {
+    color: #8FCBA5;
+}
+
+html[data-tema="escuro"] .campo input,
+html[data-tema="escuro"] .campo select,
+html[data-tema="escuro"] .campo textarea {
+    background-color: #2B332D;
+    color: #E5E9E5;
+    border-color: #657469;
+}
+
+html[data-tema="escuro"] .campo input:focus,
+html[data-tema="escuro"] .campo select:focus,
+html[data-tema="escuro"] .campo textarea:focus {
+    outline-color: #8FCBA5;
+    border-color: #8FCBA5;
+}
+
+html[data-tema="escuro"] .aviso {
+    color: #C2CCC4;
+}
+
+html[data-tema="escuro"] #mensagemSucesso {
+    color: #8FCBA5;
+}
+
 /* Adaptação para telas menores */
 @media (max-width: 768px) {
 
