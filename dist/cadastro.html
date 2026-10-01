@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cadastre-se para participar das ações da Patas que Transformam.">
+
+    <title>Patas que Transformam | Participe</title>
+
+  <script type="module" crossorigin src="/projetoONG_atvCruzeiroDoSul/assets/main-CkAkaqlE.js"></script>
+  <link rel="stylesheet" crossorigin href="/projetoONG_atvCruzeiroDoSul/assets/main-BWv2EfiV.css">
+  <link rel="stylesheet" crossorigin href="/projetoONG_atvCruzeiroDoSul/assets/cadastro-pGM2ljs5.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <button
+                id="alternarTema"
+                class="botao-tema"
+                type="button"
+                aria-label="Ativar tema escuro"
+                aria-pressed="false">
+                🌙 Tema escuro
+            </button>
+            <a href="index.html" class="logo">
+                <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3e%3cg%20fill='%23F5D6A0'%3e%3cellipse%20cx='32'%20cy='39'%20rx='15'%20ry='12'/%3e%3cellipse%20cx='13'%20cy='26'%20rx='6'%20ry='8'%20transform='rotate(-25%2013%2026)'/%3e%3cellipse%20cx='27'%20cy='15'%20rx='6'%20ry='8'%20transform='rotate(-10%2027%2015)'/%3e%3cellipse%20cx='41'%20cy='15'%20rx='6'%20ry='8'%20transform='rotate(10%2041%2015)'/%3e%3cellipse%20cx='53'%20cy='26'%20rx='6'%20ry='8'%20transform='rotate(25%2053%2026)'/%3e%3c/g%3e%3c/svg%3e" alt="" class="logo-icone">
+                Patas que Transformam
+            </a>
+
+            <nav aria-label="Navegação principal">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="projetos.html">Projetos</a></li>
+                    <li><a href="cadastro.html" class="ativo">Participe</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="sobre">
+            <div class="container">
+                <h1>Faça parte dessa transformação!</h1>
+
+                <p>
+                    Existem várias formas de contribuir com a proteção animal.
+                    Preencha o formulário abaixo e conte como gostaria de
+                    participar das nossas iniciativas.
+                </p>
+            </div>
+        </section>
+
+        <section class="formulario">
+            <div class="container">
+
+                <form id="formCadastro">
+
+                    <fieldset>
+                        <legend>Dados pessoais</legend>
+
+                        <div class="campo">
+                            <label for="nome">Nome completo *</label>
+                            <input
+                                type="text"
+                                id="nome"
+                                name="nome"
+                                placeholder="Digite seu nome completo"
+                                minlength="3"
+                                required>
+                        </div>
+
+                        <div class="campo">
+                            <label for="cpf">CPF *</label>
+                            <input
+                                type="text"
+                                id="cpf"
+                                name="cpf"
+                                placeholder="000.000.000-00"
+                                maxlength="14"
+                                inputmode="numeric"
+                                required>
+                        </div>
+
+                        <div class="campo">
+                            <label for="nascimento">Data de nascimento *</label>
+                            <input
+                                type="date"
+                                id="nascimento"
+                                name="nascimento"
+                                required>
+                        </div>
+
+                        <div class="campo">
+                            <label for="email">E-mail *</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="exemplo@email.com"
+                                required>
+                        </div>
+
+                        <div class="campo">
+                            <label for="telefone">Telefone *</label>
+                            <input
+                                type="tel"
+                                id="telefone"
+                                name="telefone"
+                                placeholder="(00) 00000-0000"
+                                maxlength="15"
+                                inputmode="numeric"
+                                required>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Endereço</legend>
+
+                        <div class="campo">
+                            <label for="cep">CEP *</label>
+                            <input
+                                type="text"
+                                id="cep"
+                                name="cep"
+                                placeholder="00000-000"
+                                maxlength="9"
+                                inputmode="numeric"
+                                required>
+                        </div>
+
+                        <div class="campo">
+                            <label for="endereco">Endereço *</label>
+                            <input
+                                type="text"
+                                id="endereco"
+                                name="endereco"
+                                placeholder="Rua, avenida, etc."
+                                required>
+                        </div>
+
+                        <div class="campo">
+                            <label for="numero">Número *</label>
+                            <input
+                                type="text"
+                                id="numero"
+                                name="numero"
+                                placeholder="Número da residência"
+                                required>
+                        </div>
+
+                        <div class="campo">
+                            <label for="bairro">Bairro *</label>
+                            <input
+                                type="text"
+                                id="bairro"
+                                name="bairro"
+                                required>
+                        </div>
+
+                        <div class="campo">
+                            <label for="cidade">Cidade *</label>
+                            <input
+                                type="text"
+                                id="cidade"
+                                name="cidade"
+                                required>
+                        </div>
+
+                        <div class="campo">
+                            <label for="estado">Estado *</label>
+                            <select id="estado" name="estado" required>
+                                <option value="">Selecione seu estado</option>
+                            </select>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Como deseja participar?</legend>
+
+                        <div class="campo">
+                            <label for="participacao">Tipo de participação *</label>
+                            <select
+                                id="participacao"
+                                name="participacao"
+                                required>
+
+                                <option value="">Selecione uma opção</option>
+                                <option value="adocao">Adoção</option>
+                                <option value="voluntariado">Voluntariado</option>
+                                <option value="lar-temporario">Lar temporário</option>
+                                <option value="apoio">Apoio e doações</option>
+                            </select>
+                        </div>
+
+                        <div class="campo" id="campoDisponibilidade" hidden>
+                            <label for="disponibilidade">Disponibilidade *</label>
+                            <select id="disponibilidade" name="disponibilidade">
+                                <option value="">Selecione...</option>
+                                <option value="manha">Manhã</option>
+                                <option value="tarde">Tarde</option>
+                                <option value="noite">Noite</option>
+                                <option value="finais de semana">Finais de semana</option>
+                                <option value="flexivel">Flexível</option>
+                            </select>
+                        </div>
+
+                        <div class="campo">
+                            <label for="mensagem">Informações adicionais</label>
+                            <textarea
+                                id="mensagem"
+                                name="mensagem"
+                                rows="5"
+                                placeholder="Conte um pouco mais sobre seu interesse em participar..."></textarea>
+                        </div>
+                    </fieldset>
+
+                    <div class="campo consentimento">
+                        <input
+                            type="checkbox"
+                            id="consentimento"
+                            name="consentimento"
+                            required>
+
+                        <label for="consentimento">
+                            Concordo em fornecer meus dados para contato
+                            relacionado às iniciativas da ONG. *
+                        </label>
+                    </div>
+
+                    <p class="aviso">* Campos obrigatórios.</p>
+
+                    <button type="submit" class="botao">
+                        Enviar cadastro
+                    </button>
+
+                    <p id="mensagemSucesso" aria-live="polite"></p>
+
+                </form>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Patas que Transformam. Todos os direitos reservados.</p>
+            <p>Resgatando vidas, construindo novos lares.</p>
+        </div>
+    </footer>
+
+
+</body>
+</html>
